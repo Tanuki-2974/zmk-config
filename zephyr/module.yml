@@ -1,0 +1,9 @@
+name: zmk-config
+build:
+  cmake: .
+  kconfig: Kconfig
+  settings:
+    board_root: .
+    dts_root: .
+    drivers:
+      - drivers/pmw3610

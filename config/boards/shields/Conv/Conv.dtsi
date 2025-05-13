@@ -3,10 +3,10 @@
 
 / {
     chosen {
-        zmk,physical-layout = &roba_physical_layout;
+        zmk,physical-layout = &Conv_physical_layout;
     };
     
-    roba_physical_layout: roba_physical_layout {
+    Conv_physical_layout: Conv_physical_layout {
         compatible = "zmk,physical-layout";
         display-name = "Default";
         transform = <&default_transform>;
@@ -100,5 +100,20 @@
         compatible = "zmk,keymap-sensors";
         sensors = <&left_encoder &right_encoder>;
         triggers-per-rotation = <10>;
+    };
+
+    &spi1 {
+    pmw3610@0 {
+        compatible = "pixart,pmw3610";
+        reg = <0>;
+        spi-max-frequency = <2000000>;
+        irq-gpios = <&gpio0 10 GPIO_ACTIVE_LOW>;
+        label = "PMW3610";
+            };
+    };
+
+    sensors {
+        compatible = "zmk,keymap-sensors";
+        sensors = <&pmw3610>;
     };
 };
