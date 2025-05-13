@@ -1,9 +1,4 @@
-name: zmk-config
+name: Conv
 build:
-  cmake: .
-  kconfig: Kconfig
   settings:
-    board_root: .
-    dts_root: .
-    drivers:
-      - drivers/pmw3610
+    board_root: config
