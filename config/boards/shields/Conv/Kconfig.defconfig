@@ -1,0 +1,22 @@
+if SHIELD_Conv_R
+
+config ZMK_KEYBOARD_NAME
+    default "Conv_R"
+
+config ZMK_SPLIT
+    default y
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_Conv_L
+
+config ZMK_KEYBOARD_NAME
+    default "Conv_L"
+
+config ZMK_SPLIT
+    default y
+
+endif

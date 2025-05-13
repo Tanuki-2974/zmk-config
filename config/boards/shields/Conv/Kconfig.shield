@@ -1,0 +1,5 @@
+config SHIELD_Conv_R
+    def_bool $(shields_list_contains,Conv_R)
+
+config SHIELD_Conv_L
+    def_bool $(shields_list_contains,Conv_L)
