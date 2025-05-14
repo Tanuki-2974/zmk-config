@@ -70,7 +70,6 @@
     compatible = "zmk,input-listener";
     device = <&trackball>;
   };
-};
 
   input_split: input-split@0 {
     compatible = "zmk,input-split";
