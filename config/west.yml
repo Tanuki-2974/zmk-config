@@ -15,6 +15,6 @@ manifest:
       import: app/west.yml
     - name: zmk-pmw3610-driver
       remote: Tanuki-2974
-      revision: startup_optimization
+      revision: main
   self:
     path: config
