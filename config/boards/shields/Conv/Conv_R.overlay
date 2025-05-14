@@ -71,8 +71,11 @@
     device = <&trackball>;
   };
 
-  input_split {
-    compatible = "zmk,input-split";
-    input = <&trackball>;
-  };
+/ {
+    input_split: input-split@0 {
+        compatible = "zmk,input-split";
+        reg = <0>;
+        input = <&trackball>;
+        };
+    };
 };
