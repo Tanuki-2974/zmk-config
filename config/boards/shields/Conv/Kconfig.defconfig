@@ -1,22 +1,37 @@
-if SHIELD_Conv_R
+if SHIELD_Conv_L
 
 config ZMK_KEYBOARD_NAME
-    default "Conv_R"
+    default "Conv"
 
-config ZMK_SPLIT
+config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
 
-if SHIELD_Conv_L
-
-config ZMK_KEYBOARD_NAME
-    default "Conv_L"
+if SHIELD_Conv_L || SHIELD_Conv_R
 
 config ZMK_SPLIT
     default y
 
-config ZMK_SPLIT_ROLE_CENTRAL
+config ZMK_SLEEP
     default y
+
+config ZMK_POINTING
+    default y
+
+config ZMK_POINTING_SMOOTH_SCROLLING
+    default n
+
+config SPI
+    default y
+
+config PMW3610
+    default y
+
+config PMW3610_SWAP_XY
+    default y
+
+config PMW3610_REPORT_INTERVAL_MIN
+    default 8
 
 endif
