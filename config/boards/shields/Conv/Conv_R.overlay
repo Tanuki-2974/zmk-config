@@ -47,7 +47,7 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio1 0 GPIO_ACTIVE_LOW>;
 
-    trackball: trackball@0 {
+    trackball_peripheral: trackball_peripheral@0 {
         status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
@@ -61,7 +61,6 @@
     };
 };
 
-trackball_peripheral_listener: trackball_peripheral_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-    };
+&trackball_peripheral_split {
+    device = <&trackball_peripheral>;
+};
