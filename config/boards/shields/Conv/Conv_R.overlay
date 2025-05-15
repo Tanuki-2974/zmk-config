@@ -38,9 +38,9 @@
 };
 
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-#include "<keyboard>.dtsi"
+#include "Conv.dtsi"
 
-&spi1 {
+&spi0 {
     status = "okay";
     compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi0_default>;

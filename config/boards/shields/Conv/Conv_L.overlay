@@ -38,7 +38,7 @@
 };
 
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-#include "<keyboard>.dtsi"
+#include "Conv.dtsi"
 
 &spi0 {
     status = "okay";
