@@ -38,6 +38,7 @@
 };
 
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include "<keyboard>.dtsi"
 
 &spi0 {
     status = "okay";
@@ -67,7 +68,6 @@
 
 / {
   trackball_central_listener {
-    compatible = "zmk,input-listener";
-    device = <&trackball>;
+    status = "okay"
   };
 };

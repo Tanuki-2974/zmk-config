@@ -102,7 +102,6 @@
         triggers-per-rotation = <10>;
     };
 
-//right hand trackball
     split_inputs {
         #address-cells = <1>;
         #size-cells = <0>;

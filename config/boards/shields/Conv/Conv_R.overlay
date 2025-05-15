@@ -40,7 +40,7 @@
 #include <zephyr/dt-bindings/input/input-event-codes.h>
 #include "<keyboard>.dtsi"
 
-&spi0 {
+&spi1 {
     status = "okay";
     compatible = "nordic,nrf-spim";
     pinctrl-0 = <&spi0_default>;
@@ -72,7 +72,6 @@
 
 / {
   trackball_peripheral_listener {
-    compatible = "zmk,input-listener";
-    device = <&trackball_peripheral>;
+    status = "okay"
   };
 };
