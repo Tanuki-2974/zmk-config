@@ -65,9 +65,7 @@
     };
 };
 
-/ {
-  trackball_central_listener {
-    compatible = "zmk,input-listener";
-    device = <&trackball>;
-  };
-};
+trackball_central_listener: trackball_central_listener {
+        compatible = "zmk,input-listener";
+        device = <&trackball>;
+    };

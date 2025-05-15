@@ -111,16 +111,5 @@
             reg = <0>;
         };
     };
-
-    trackball_peripheral_listener: trackball_peripheral_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball_peripheral>;
-        status = "disabled";
-    };
-
-    trackball_central_listener: trackball_central_listener {
-        compatible = "zmk,input-listener";
-        device = <&trackball>;
-        status = "disabled";
-    };
 };
+    
