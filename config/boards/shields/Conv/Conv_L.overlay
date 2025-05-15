@@ -69,7 +69,7 @@
 / {
   &trackball_central_listener {
     compatible = "zmk,input-listener";
+    device = <&trackball_central>;
     status = "okay";
-    device = <&trackball>;
   };
 };

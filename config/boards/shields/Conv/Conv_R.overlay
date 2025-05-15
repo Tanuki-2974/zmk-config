@@ -70,6 +70,7 @@
   trackball_peripheral_listener {
     compatible = "zmk,input-listener";
     device = <&trackball_peripheral>;
+    status = "okay";
   };
 };
 
