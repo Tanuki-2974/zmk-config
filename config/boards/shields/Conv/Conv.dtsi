@@ -116,13 +116,14 @@
 
     trackball_peripheral_listener: trackball_peripheral_listener {
         compatible = "zmk,input-listener";
-        device = <&trackball_peripheral_split>;
+        device = <&trackball_peripheral>;
         status = "disabled";
     };
 
     //left hand trackball
     trackball_central_listener: trackball_central_listener {
         compatible = "zmk,input-listener";
+        device = <&trackball>;
         status = "disabled";
     };
 };
