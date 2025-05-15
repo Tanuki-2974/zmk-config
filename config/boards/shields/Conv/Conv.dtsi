@@ -110,7 +110,6 @@
         trackball_peripheral_split: trackball_peripheral_split@0 {
             compatible = "zmk,input-split";
             reg = <0>;
-            input = <&trackball_peripheral_listener>;
         };
     };
 

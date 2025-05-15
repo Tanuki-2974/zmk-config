@@ -38,6 +38,7 @@
 };
 
 #include <zephyr/dt-bindings/input/input-event-codes.h>
+#include "<keyboard>.dtsi"
 
 &spi0 {
     status = "okay";
@@ -63,6 +64,10 @@
            fallback to normal downshift mode after ZMK goes into IDLE / SLEEP mode.
            thus, the sensor would be a `wakeup-source` */
     };
+};
+
+&trackball_peripheral_split {
+    device = <&trackball_peripheral>;
 };
 
 / {
