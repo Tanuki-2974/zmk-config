@@ -65,7 +65,9 @@
     };
 };
 
-  // Overrides for the input-split child node
-&trackball_peripheral_split {
+/ {
+  trackball_peripheral_listener {
+    compatible = "zmk,input-listener";
     device = <&trackball_peripheral>;
+  };
 };
