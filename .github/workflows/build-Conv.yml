@@ -6,4 +6,4 @@ jobs:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
       build_matrix_path: build-Conv.yaml   # ← A用ビルドリスト
-      config_path: configs/Conv           # ← A用設定フォルダ
+      config_path: .           # ← A用設定フォルダ
