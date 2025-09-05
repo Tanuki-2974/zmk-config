@@ -7,9 +7,3 @@ jobs:
     with:
       build_matrix_path: build-Conv.yaml   # ← A用ビルドリスト
       config_path: configs/Conv           # ← A用設定フォルダ
-
-include:
-  - board: seeeduino_xiao_ble
-    shield: Conv_L
-  - board: seeeduino_xiao_ble
-    shield: Conv_R

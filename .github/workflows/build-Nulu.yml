@@ -5,11 +5,5 @@ jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
-      build_matrix_path: build-NuLu.yaml   # ← A用ビルドリスト
-      config_path: configs/NuLu            # ← A用設定フォルダ
-
-include:
-  - board: seeeduino_xiao_ble
-    shield: NuLu_L
-  - board: seeeduino_xiao_ble
-    shield: NuLu_R
+      build_matrix_path: build-NuLu.yaml   # ← B用ビルドリスト
+      config_path: configs/NuLu            # ← B用設定フォルダ
