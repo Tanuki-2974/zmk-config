@@ -1,6 +1,6 @@
 file_format: "1"
 id: nulu
-name: Nulu
+name: NuLu
 type: shield
 url: https://github.com/Tanuki-2974/zmk-config
 requires: [seeeduino_xiao_ble]
@@ -13,5 +13,5 @@ features:
   - studio
   - pointer
 siblings:
-  - Nulu_L
-  - Nulu_R
+  - NuLu_L
+  - NuLu_R

@@ -1,14 +1,14 @@
 # 左シールドが有効な場合の設定
-if CONFIG_SHIELD_Nulu_L
+if CONFIG_SHIELD_NuLu_L
     config ZMK_KEYBOARD_NAME
-        default "Nulu"  # キーボード名を"Nulu"に設定
+        default "NuLu"  # キーボード名を"Nulu"に設定
 
     config ZMK_SPLIT_ROLE_CENTRAL
         default y  # 分割キーボードの中央役割を有効にする
 endif
 
 # 左右両方のシールドが有効な場合の設定
-if CONFIG_SHIELD_Nulu_L || CONFIG_SHIELD_Nulu_R
+if CONFIG_SHIELD_NuLu_L || CONFIG_SHIELD_NuLu_R
     config ZMK_SPLIT
         default y  # 分割キーボードの有効化
 
