@@ -1,9 +1,9 @@
-name: Build Nulu
+name: Build NuLu
 on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
-      build_matrix_path: build-Nulu.yaml   # ← A用ビルドリスト
-      config_path: configs/Nulu            # ← A用設定フォルダ
+      build_matrix_path: build-NuLu.yaml   # ← A用ビルドリスト
+      config_path: configs/NuLu            # ← A用設定フォルダ
