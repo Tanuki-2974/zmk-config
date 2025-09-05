@@ -12,6 +12,3 @@ features:
   - backlight
   - studio
   - pointer
-siblings:
-  - Conv_L
-  - Conv_R
