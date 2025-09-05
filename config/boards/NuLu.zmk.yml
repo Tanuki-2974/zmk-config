@@ -1,6 +1,6 @@
 file_format: "1"
 id: nulu
-name: NuLu
+name: NuLu＿L
 type: shield
 url: https://github.com/Tanuki-2974/zmk-config
 requires: [seeeduino_xiao_ble]
