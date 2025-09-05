@@ -1,0 +1,5 @@
+config SHIELD_NuLu_L
+    def_bool $(shields_list_contains,NuLu_L)
+
+config SHIELD_NuLu_R
+    def_bool $(shields_list_contains,NuLu_R)

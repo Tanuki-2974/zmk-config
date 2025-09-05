@@ -1,0 +1,30 @@
+identifier: xiao_ble_plus
+name: XIAO BLE PLUS
+type: mcu
+arch: arm
+ram: 256
+flash: 1024
+toolchain:
+  - zephyr
+  - gnuarmemb
+supported:
+  - adc
+  - ble
+  - counter
+  - gpio
+  - i2c
+  - i2s
+  - pwm
+  - spi
+  - usb_device
+  - watchdog
+  - netif:openthread
+  - xiao_adc
+  - xiao_gpio
+  - xiao_i2c
+  - xiao_serial0
+  - xiao_serial1
+  - xiao_i2s
+  - xiao_spi1
+  - xiao_spi2
+vendor: seeed

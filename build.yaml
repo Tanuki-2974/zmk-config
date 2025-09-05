@@ -19,11 +19,18 @@
 #
 ---
 include:
- - board: seeeduino_xiao_ble
-   shield: Conv_R
+ # ---- Keyboard Conv (split) ----
  - board: seeeduino_xiao_ble
    shield: Conv_L
    snippet: studio-rpc-usb-uart
-   cmake-args: -DCONFIG_ZMK_STUDIO=y
+ - board: seeeduino_xiao_ble
+   shield: Conv_R
+   
  - board: seeeduino_xiao_ble
    shield: settings_reset
+# ---- Keyboard Nulu (split) ----
+ - board: seeeduino_xiao_ble_plus
+   shield: NuLu_L rgbled_adapter
+   snippet: studio-rpc-usb-uart
+ - board: seeeduino_xiao_ble_plus
+   shield: NuLu_R rgbled_adapter

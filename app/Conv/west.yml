@@ -1,0 +1,21 @@
+manifest:
+  remotes:
+    - name: zmkfirmware
+      url-base: https://github.com/zmkfirmware
+    # Additional modules containing boards/shields/custom code can be listed here as well
+    # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
+    - name: Tanuki-2974
+      url-base: https://github.com/Tanuki-2974
+  projects:
+    - name: zmk
+      remote: zmkfirmware
+      revision: main
+      import: app/west.yml
+    - name: zmk-pmw3610-driver
+      remote: Tanuki-2974
+      revision: main
+    - name: zmk-rgbled-widget
+      remote: Tanuki-2974
+      revision: main
+  self:
+    path: app/Conv

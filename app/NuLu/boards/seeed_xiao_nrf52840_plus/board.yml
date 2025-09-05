@@ -1,0 +1,8 @@
+board:
+  name: xiao_ble_plus
+  full_name: XIAO BLE PLUS (Sense)
+  vendor: seeed
+  socs:
+  - name: nrf52840
+    variants:
+    - name: 'sense'

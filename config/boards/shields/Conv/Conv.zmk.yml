@@ -1,8 +1,0 @@
-file_format: "1"
-id: Conv
-name: Conv
-type: shield
-url: https://github.com/Tanuki-2974/zmk-config
-requires: [seeeduino_xiao_ble]
-features:
-  - keys
