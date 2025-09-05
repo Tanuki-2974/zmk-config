@@ -1,4 +1,4 @@
-name: Conv
+name: zmk-config
 build:
   settings:
     board_root: config
