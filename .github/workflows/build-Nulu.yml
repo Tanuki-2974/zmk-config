@@ -6,4 +6,4 @@ jobs:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
       build_matrix_path: build-NuLu.yaml   # ← B用ビルドリスト
-      config_path: configs/NuLu            # ← B用設定フォルダ
+      config_path: configs                 # ← B用設定フォルダ
