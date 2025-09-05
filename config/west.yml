@@ -18,4 +18,4 @@ manifest:
       remote: Tanuki-2974
       revision: main
   self:
-    path: app
+    path: config
