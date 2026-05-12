@@ -43,6 +43,9 @@
 		led0 = &led0;
 		led1 = &led1;
 		led2 = &led2;
+		led-red = &led0;
+		led-green = &led1;
+		led-blue = &led2;
 		pwm-led0 = &pwm_led0;
 		bootloader-led0 = &led0;
 		mcuboot-led0 = &led0;
