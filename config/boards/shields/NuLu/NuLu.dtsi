@@ -79,7 +79,7 @@
                 , <&xiao_d 10 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> 			
                 ;
     };
-};
+
 
     left_encoder: encoder_left {
         compatible = "alps,ec11";
@@ -137,12 +137,13 @@
             };
         };
 
-    spi0_sleep: spi0_sleep {
-        group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
-            low-power-enable;
+        spi0_sleep: spi0_sleep {
+            group1 {
+                psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
+                    <NRF_PSEL(SPIM_MOSI, 0, 4)>,
+                    <NRF_PSEL(SPIM_MISO, 0, 4)>;
+             low-power-enable;
             };
         };
     };
+};
