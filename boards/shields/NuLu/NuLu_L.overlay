@@ -6,16 +6,26 @@
 };
 
 &kscan0 {
-        col-gpios
-            = <&xiao_d 0 GPIO_ACTIVE_HIGH>
-            , <&xiao_d 1 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 2 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 3 GPIO_ACTIVE_HIGH> 
-            , <&xiao_d 6 GPIO_ACTIVE_HIGH>
-            ;
+    row-gpios
+        = <&gpio0 2 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* Row0 */
+        , <&gpio0 29 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* Row1 */
+        , <&gpio1 13 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)> /* Row2 */
+        , <&gpio1 5 (GPIO_ACTIVE_HIGH | GPIO_PULL_DOWN)>  /* Row3 */
+        ;
+
+    col-gpios
+        = <&gpio0 15 GPIO_ACTIVE_HIGH> /* Col0 */
+        , <&gpio0 3 GPIO_ACTIVE_HIGH>  /* Col1 */
+        , <&gpio0 19 GPIO_ACTIVE_HIGH> /* Col2 */
+        , <&gpio0 28 GPIO_ACTIVE_HIGH> /* Col3 */
+        , <&gpio1 1 GPIO_ACTIVE_HIGH>  /* Col4 */
+        , <&gpio1 14 GPIO_ACTIVE_HIGH> /* Col5 */
+        ;
 };
 
 &left_encoder {
+    a-gpios = <&gpio1 12 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
+    b-gpios = <&gpio1 3 (GPIO_ACTIVE_HIGH | GPIO_PULL_UP)>;
     status = "okay";
 };
 
@@ -23,16 +33,16 @@
     spi0_default: spi0_default {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+                <NRF_PSEL(SPIM_MOSI, 1, 15)>,
+                <NRF_PSEL(SPIM_MISO, 1, 15)>;
         };
     };
 
     spi0_sleep: spi0_sleep {
         group1 {
             psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+                <NRF_PSEL(SPIM_MOSI, 1, 15)>,
+                <NRF_PSEL(SPIM_MISO, 1, 15)>;
             low-power-enable;
         };
     };
@@ -48,14 +58,14 @@
     pinctrl-0 = <&spi0_default>;
     pinctrl-1 = <&spi0_sleep>;
     pinctrl-names = "default", "sleep";
-    cs-gpios = <&gpio1 0 GPIO_ACTIVE_LOW>;
+    cs-gpios = <&gpio1 11 GPIO_ACTIVE_LOW>;
 
     trackball_central: trackball_central@0 {
         status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        irq-gpios = <&gpio0 4 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
         cpi = <600>;
         evt-type = <INPUT_EV_REL>;
         x-input-code = <INPUT_REL_X>;

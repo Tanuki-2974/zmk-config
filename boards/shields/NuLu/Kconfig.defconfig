@@ -2,6 +2,9 @@ if SHIELD_NuLu_L || SHIELD_NuLu_R
     config ZMK_SPLIT
         default y
 
+    config ZMK_BLE
+        default y
+
     config ZMK_SLEEP
         default y
 endif
