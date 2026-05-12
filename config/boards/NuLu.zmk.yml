@@ -3,7 +3,7 @@ id: nuLu
 name: NuLu
 type: shield
 url: https://github.com/Tanuki-2974/zmk-config
-requires: [seeeduino_xiao_ble]
+requires: [xiao_ble_plus]
 features:
   - keys
   - encoder

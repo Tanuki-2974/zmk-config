@@ -7,7 +7,7 @@
 
 #include <nordic/nrf52840_qiaa.dtsi>
 #include <nordic/nrf52840_partition_uf2_sdv7.dtsi>
-#include "xiao_blep_lus-pinctrl.dtsi"
+#include "xiao_ble_plus-pinctrl.dtsi"
 #include "seeed_xiao_plus_connector.dtsi"
 
 / {

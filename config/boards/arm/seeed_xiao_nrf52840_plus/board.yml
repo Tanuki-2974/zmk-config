@@ -4,5 +4,3 @@ board:
   vendor: seeed
   socs:
   - name: nrf52840
-    variants:
-    - name: 'sense'
