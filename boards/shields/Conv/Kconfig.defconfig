@@ -25,13 +25,10 @@ config ZMK_POINTING_SMOOTH_SCROLLING
 config SPI
     default y
 
-config PMW3610
+config INPUT
     default y
 
-config PMW3610_SWAP_XY
+config INPUT_PMW3610
     default y
-
-config PMW3610_REPORT_INTERVAL_MIN
-    default 8
 
 endif

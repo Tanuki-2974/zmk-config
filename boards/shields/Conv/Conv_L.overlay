@@ -1,4 +1,6 @@
 #include "Conv.dtsi"
+#include <zephyr/dt-bindings/input/input-event-codes.h>
+#include <zephyr/dt-bindings/spi/spi.h>
 
 &default_transform {
     col-offset = <6>;
@@ -14,30 +16,32 @@
             ;
 };
 
-&right_encoder {
+&left_encoder {
     status = "okay";
 };
 
 &pinctrl {
     spi0_default: spi0_default {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+            psels = <NRF_PSEL(SPIM_SCK, 0, 8)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 17)>,
+                <NRF_PSEL(SPIM_MISO, 0, 17)>;
         };
     };
 
     spi0_sleep: spi0_sleep {
         group1 {
-            psels = <NRF_PSEL(SPIM_SCK, 0, 5)>,
-                <NRF_PSEL(SPIM_MOSI, 0, 4)>,
-                <NRF_PSEL(SPIM_MISO, 0, 4)>;
+            psels = <NRF_PSEL(SPIM_SCK, 0, 8)>,
+                <NRF_PSEL(SPIM_MOSI, 0, 17)>,
+                <NRF_PSEL(SPIM_MISO, 0, 17)>;
             low-power-enable;
         };
     };
 };
 
-#include <zephyr/dt-bindings/input/input-event-codes.h>
+&trackball_peripheral_listener {
+    status = "okay";
+};
 
 &spi0 {
     status = "okay";
@@ -47,20 +51,23 @@
     pinctrl-names = "default", "sleep";
     cs-gpios = <&gpio1 0 GPIO_ACTIVE_LOW>;
 
-    trackball_peripheral: trackball_peripheral@0 {
+    trackball_central: trackball_central@0 {
         status = "okay";
         compatible = "pixart,pmw3610";
         reg = <0>;
         spi-max-frequency = <2000000>;
-        irq-gpios = <&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
-        cpi = <600>;
-        evt-type = <INPUT_EV_REL>;
-        x-input-code = <INPUT_REL_X>;
-        y-input-code = <INPUT_REL_Y>;
+        duplex = <SPI_HALF_DUPLEX>;
+        motion-gpios = <&gpio1 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
+        res-cpi = <600>;
+        zephyr,axis-x = <INPUT_REL_X>;
+        zephyr,axis-y = <INPUT_REL_Y>;
+        smart-mode;
         force-awake;
     };
 };
 
-&trackball_peripheral_split {
-    device = <&trackball_peripheral>;
+// Overrides for the input listener node
+&trackball_central_listener {
+    status = "okay";
+    device = <&trackball_central>;
 };

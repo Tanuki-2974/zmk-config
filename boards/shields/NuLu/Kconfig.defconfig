@@ -1,4 +1,4 @@
-if SHIELD_NuLu_L || SHIELD_NuLu_R
+if SHIELD_NULU_L || SHIELD_NULU_R
     config ZMK_SPLIT
         default y
 
@@ -9,7 +9,7 @@ if SHIELD_NuLu_L || SHIELD_NuLu_R
         default y
 endif
 
-if SHIELD_NuLu_L
+if SHIELD_NULU_L
     config ZMK_KEYBOARD_NAME
         default "NuLu_L"
 
@@ -17,7 +17,7 @@ if SHIELD_NuLu_L
         default y
 endif
 
-if SHIELD_NuLu_R
+if SHIELD_NULU_R
     config ZMK_KEYBOARD_NAME
         default "NuLu_R"
 endif
