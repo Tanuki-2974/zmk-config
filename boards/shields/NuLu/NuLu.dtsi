@@ -126,9 +126,7 @@
         status = "disabled";
         device = <&trackball_peripheral_split>;
     };
-};
 
-/ {
     aliases {
         led-red = &led0;
         led-green = &led1;
@@ -148,4 +146,14 @@
             gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;  // blue LED, connected to P0.06
         };
     };
+
+    chg_stat: chg_stat {
+        compatible = "custom,chg-stat";
+        gpios = <&gpio0 17 GPIO_ACTIVE_LOW>;
+        status = "okay";
+    };
 };
+
+
+    
+
