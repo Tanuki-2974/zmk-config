@@ -9,7 +9,7 @@
 #define NUM 6
 
 &mkp_input_listener {
-    input-processors = <&zip_temp_layer 2 250>;
+    input-processors = <&zip_temp_layer MOUSE 250>;
 };
 
 &mt {
@@ -45,6 +45,23 @@
             bindings = <&kp EQUAL>;
             key-positions = <24 25>;
         };
+
+        mb3 {
+            bindings = <&mkp MB3>;
+            key-positions = <18 19>;
+        };
+
+        scroll {
+            bindings = <&mo SCROLL>;
+            key-positions = <17 18>;
+            layers = <MOUSE>;
+        };
+
+        setting {
+            bindings = <&mo NUM>;
+            key-positions = <36 37>;
+            layers = <0>;
+        };
     };
 
     macros {
@@ -72,10 +89,10 @@
 
         Layer_0_Base {
             bindings = <
-&kp Q            &kp W        &kp E  &kp R  &kp T                                                     &kp Y           &kp U  &kp I     &kp O           &kp P
-&mt LCTRL A      &kp S        &kp D  &kp F  &kp G                                                     &kp H           &kp J  &kp K     &kp L           &mt RCTRL BACKSPACE
-&mt LEFT_SHIFT Z &kp X        &kp C  &kp V  &kp B            &kp COLON                &kp SEMICOLON   &kp N           &kp M  &kp COMMA &kp DOT         &mt RIGHT_SHIFT ENTER
-&kp LEFT_WIN     &kp LEFT_ALT &trans &trans &mt LCTRL LANG2  &lt 3 SPACE              &lt 1 BACKSPACE &mt LCTRL LANG1 &trans &trans    &kp RIGHT_SHIFT &kp ESC
+&kp Q            &kp W        &kp E        &kp R            &kp T                                           &kp Y              &kp U            &kp I     &kp O        &kp P
+&kp A            &kp S        &kp D        &kp F            &kp G                                           &kp H              &kp J            &kp K     &kp L        &kp MINUS
+&mt LEFT_SHIFT Z &kp X        &kp C        &kp V            &kp B            &none               &none      &kp N              &kp M            &kp COMMA &kp DOT      &mt RIGHT_SHIFT SLASH
+&kp TAB          &kp LCTRL    &kp LEFT_ALT &mt LEFT_WIN LANG2 &lt 1 SPACE    &lt 2 BACKSPACE     &lt 3 ENTER &mt LEFT_WIN LANG1 &none           &none     &kp C_VOL_DN &kp C_VOL_UP
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -84,29 +101,29 @@
 
     Layer_1_Symbol {
             bindings = <
-&kp KP_NUMBER_1 &kp KP_NUMBER_2 &kp KP_NUMBER_3 &kp KP_NUMBER_4 &kp KP_NUMBER_5                                   &kp KP_NUMBER_6 &kp KP_NUMBER_7 &kp KP_NUMBER_8 &kp KP_NUMBER_9 &kp KP_NUMBER_0
-&kp C_BRI_DN    &kp C_BRI_UP    &kp C_VOL_DN    &kp C_VOL_UP    &trans                                            &kp EXCLAMATION &kp AT_SIGN     &kp HASH        &kp MINUS       &kp EQUAL
-&kp C_SNAPSHOT  &kp C_SNAPSHOT  &kp C_SNAPSHOT  &trans          &trans        &trans                       &trans &kp COLON       &kp DQT         &kp LEFT_BRACE  &kp RIGHT_BRACE &kp BSLH
-&trans          &trans          &trans          &trans          &trans        &trans                       &trans &trans          &trans          &trans          &trans          &trans
+&kp EXCLAMATION &kp AT_SIGN     &kp HASH       &kp DOLLAR     &kp PERCENT                               &kp CARET &kp AMPERSAND &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS
+&kp C_SNAPSHOT  &kp C_SNAPSHOT  &kp C_SNAPSHOT &none          &none                                     &kp MINUS &kp EQUAL     &kp LBKT      &kp RBKT              &kp BSLH
+&none           &none           &none          &none          &none        &none              &none     &none     &none         &kp SEMICOLON &kp SQT               &kp GRAVE
+&kp ESC         &none           &none          &none          &trans       &trans             &trans    &none     &none         &none        &none                 &none
             >;
         };
 
     Layer_2_Number {
             bindings = <
-&kp F1  &kp F2  &kp F3  &kp F4  &kp F5                               &kp KP_NUMBER_1 &kp KP_NUMBER_1 &kp KP_NUMBER_2 &kp KP_NUMBER_3 &kp KP_NUMBER_0
-&kp F6  &kp F7  &kp F8  &kp F9  &kp F10                              &trans          &kp KP_NUMBER_4 &kp KP_NUMBER_5 &kp KP_NUMBER_6 &kp PLUS
-&kp F11 &kp F12 &kp F13 &kp F14 &kp F15 &trans                &trans &kp SLASH       &kp KP_NUMBER_7 &kp KP_NUMBER_8 &kp KP_NUMBER_9 &kp MINUS
-&trans  &trans  &trans  &trans  &trans  &trans                &trans &kp DOT         &trans          &trans          &trans          &trans
+&kp F1  &kp F2  &kp F3  &kp F4  &kp F5                               &kp NUMBER_1 &kp NUMBER_2 &kp NUMBER_3 &none        &none
+&kp F6  &kp F7  &kp F8  &kp F9  &kp F10                              &kp NUMBER_4 &kp NUMBER_5 &kp NUMBER_6 &kp PLUS     &kp MINUS
+&kp F11 &kp F12 &kp F13 &kp F14 &kp F15 &none                &none   &kp NUMBER_7 &kp NUMBER_8 &kp NUMBER_9 &kp ASTERISK &kp SLASH
+&none   &none   &none   &none   &trans  &trans               &kp DOT &kp NUMBER_0 &none        &none        &none        &none
             >;
         };
 
 
     Layer_3_Move {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &kp C_AC_DESKTOP_SHOW_ALL_WINDOWS &trans   &kp UP   &trans    &kp C_AC_DESKTOP_SHOW_ALL_APPLICATIONS
-&trans  &trans  &trans  &trans  &trans                      &kp PAGE_UP                       &kp LEFT &kp DOWN &kp RIGHT &kp PAGE_DOWN
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &kp C_PREVIOUS                    &trans   &trans   &trans    &kp C_NEXT
-&trans  &trans                  &trans  &trans      &trans  &trans                            &trans   &trans   &trans    &trans
+&none   &none   &none   &none   &none                       &kp LC(UP)       &kp LC(LEFT)    &kp UP    &kp LC(RIGHT)    &kp LC(DOWN)
+&none   &none   &none   &none   &none                       &kp LG(LEFT)     &kp LEFT        &kp DOWN  &kp RIGHT        &kp LG(RIGHT)
+&none   &none   &none   &none   &none   &none       &none   &kp C_PREVIOUS   &kp C_AC_BACK   &none     &kp C_AC_FORWARD &kp C_NEXT
+&none   &none   &none   &none   &trans  &trans      &trans  &none            &none           &none     &kp C_BRI_DN     &kp C_BRI_UP
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -114,28 +131,28 @@
 
     Layer_4_Free {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans   &trans   &trans   &trans
-&trans  &trans  &trans  &trans  &trans                      &trans  &mkp MB1 &mkp MB3 &mkp MB2 &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB4 &trans   &mkp MB1 &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans   &trans   &trans   &trans
+&none   &none   &none   &none   &none                       &none   &none    &none    &none    &none
+&none   &none   &none   &none   &none                       &none   &none    &mkp MB1 &mkp MB2 &none
+&none   &none   &none   &none   &none   &none       &none   &none   &none    &none    &none    &none
+&none   &none   &none   &none   &trans  &trans      &trans  &none   &none    &none    &none    &none
             >;
         };
 
     Layer_5_Free {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans      &trans   &kp UP   &trans    &trans
-&trans  &trans  &trans  &trans  &trans                      &kp PAGE_UP &kp LEFT &kp DOWN &kp RIGHT &kp PAGE_DOWN
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans      &trans   &trans   &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans      &trans   &trans   &trans    &trans
+&none   &none   &none   &none   &none                       &none       &none    &kp UP   &none     &none
+&none   &none   &none   &none   &none                       &kp PAGE_UP &kp LEFT &kp DOWN &kp RIGHT &kp PAGE_DOWN
+&none   &none   &none   &none   &none   &none       &none   &none       &none    &none    &none     &none
+&none   &none   &none   &none   &trans  &trans      &trans  &none       &none    &none    &none     &none
             >;
         };
 
     layer_6_Setting {
             bindings = <
-&trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans        &trans        &trans        &trans                           &trans        &trans        &trans        &trans        &bootloader
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &trans       &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &bt BT_CLR_ALL
+&none   &none   &none   &none   &none                                         &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &none
+&none   &none   &none   &none   &none                                         &bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3   &none
+&none   &none   &none   &none   &none         &none              &none        &none         &none         &none         &none           &none
+&none   &none   &none   &none   &kp NUMBER_1  &kp NUMBER_2       &trans       &none         &none         &none         &bt BT_CLR     &bt BT_CLR_ALL
             >;
         };
     };
